@@ -9,7 +9,7 @@
     </head>
     <body>
         <div id="wrapper">
-            <h2>Add a new Course</h2>
+            <h2>Add a New Course</h2>
             <form action="/addcourse" method="post" class="form-horizontal">
                 {% csrf_token %}
                 <div class="form-group">
@@ -33,12 +33,14 @@
                     <th>Course Name</th>
                     <th>Description</th>
                     <th>Date Added</th>
+                    <th>Action</th>
                 </tr>
                 {% for course in courses %}
                 <tr>
                     <td>{{ course.course_name }}</td>
                     <td>{{ course.description }}</td>
                     <td>{{ course.created_at }}</td>
+                    <td><form action="/removecourse/{{course.id}}">{% csrf_token %}<input class="btn btn-default" type="submit" value="Remove"></form></td>
                 </tr>
                 {% endfor %}
             </table>

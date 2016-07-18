@@ -8,3 +8,14 @@ def index(request):
 def addcourse(request):
     Course.objects.create(course_name=request.POST['course_name'], description=request.POST['description'])
     return redirect('/')
+
+def removecourse(request, id):
+    context = {
+        "course": Course.objects.get(id=id)
+    }
+    return render(request, 'coursesapp/remove.html', context)
+
+def removethis(request, id):
+    this = Course.objects.get(id=id)
+    this.delete()
+    return redirect('/')

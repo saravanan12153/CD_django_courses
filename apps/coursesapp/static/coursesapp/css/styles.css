@@ -8,3 +8,10 @@
 #submitadd {
 	margin-left: 1000px;
 }
+#formid {
+	display: inline-block;
+	margin: 10px;
+}
+#centralize {
+	margin-top: 100px;
+}
