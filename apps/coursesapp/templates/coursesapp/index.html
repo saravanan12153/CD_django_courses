@@ -10,7 +10,7 @@
     <body>
         <div id="wrapper">
             <h2>Add a New Course</h2>
-            <form action="/addcourse" method="post" class="form-horizontal">
+            <form action="{% url 'addcourse' %}" method="post" class="form-horizontal">
                 {% csrf_token %}
                 <div class="form-group">
                 <label class="col-sm-2 control-label">Name</label>
@@ -40,7 +40,7 @@
                     <td>{{ course.course_name }}</td>
                     <td>{{ course.description }}</td>
                     <td>{{ course.created_at }}</td>
-                    <td><form action="/removecourse/{{course.id}}">{% csrf_token %}<input class="btn btn-default" type="submit" value="Remove"></form></td>
+                    <td><form action="{% url 'removecourse' id=course.id %}">{% csrf_token %}<input class="btn btn-default" type="submit" value="Remove"></form></td>
                 </tr>
                 {% endfor %}
             </table>
