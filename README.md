@@ -6,4 +6,4 @@ Make a Django project allowing you to add a courses (with name and description) 
 
 
 Felisa's note:
-The screenshot folder features a quick view of the templates. These have no bearing on the functionality.
+The screenshots folder features a quick view of the templates. These have no bearing on the functionality.
